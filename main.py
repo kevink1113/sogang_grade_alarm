@@ -35,7 +35,7 @@ def get_saint_cookies(id, pw):
     try:
         session = requests.session()
         response = session.post(login_url, headers=header, data=LOGIN_INFO, verify=False)
-        cookies = response.cookies
+        cookies = session.cookies
         if len(cookies) == 0:
             return None
         session.close()
